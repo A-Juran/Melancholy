@@ -1,9 +1,9 @@
 /* root Stle */
 :root{
     --common--global--font-size:14px;    
-    --header-nav--font--color:rgb(100, 97, 97);
+    --header-nav--font--color:rgb(0, 0, 0);
+    /* --header-nav--font--color:rgb(100, 97, 97); */
     --article--font--color:rgb(99, 89, 89);
-
     --container-box-width:1080px;
     --header-padding--top:0;
     --header-padding--left:0;
@@ -39,7 +39,7 @@ html,body{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url("../img/bk.jpg");
+    background-image: url("../img/bk4.jpg");
     background-repeat:no-repeat;
     background-position: center;
     background-size: cover;
@@ -58,6 +58,12 @@ html,body{
 }
 
 /* header */
+#header{
+    width: 100%;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, .2);
+    padding: 10px 0;
+    transition: all .5s;
+}
 .header{
     padding: var(--header-padding--top) var(--header-padding--left);
     padding-top: var(--header-margin--top);
@@ -86,6 +92,7 @@ html,body{
     margin-left: var(--header-nav--margin--left);
     color: var(--header-nav--font--color);
     font-size: 16px;
+    font-weight: 800;
 }
 .header .menu .nav{
 
@@ -98,12 +105,19 @@ html,body{
 
 .header .menu .nav>a,.header .menu .nav .search>i{
     color: var(--header-nav--font--color);
+    font-weight: 600;
     font-size: 16px;
+}
+
+.header .menu .nav .search>i:last-child{
+    color: #fff;
+    font-weight: 500;
 }
 
 .header .menu .nav>a{
     padding: var(--header-nav--top) var(--header-nav--left);
     font-size: 16px;
+    font-weight: 600;
 }
 
 .header .menu .nav > a > i{
@@ -126,13 +140,16 @@ html,body{
     padding: 15px 0;
 }
 /* article */
-.container .article{
+.container .article,.container .post-content{
     width: 78%;
+}
+.container .article{
     display: flex;
     justify-content: space-between;
 }
 .container .article .new-article,.container .article .links{
     width: 50%;
+    transition: all .5s;
 }
 /* article--new-article */
 .container .article .new-article .tips,
@@ -145,6 +162,7 @@ html,body{
 .container .article .links .links-list{
     margin-top: 12px;
     margin-left: 30px;
+    transition: all .3s;
 }
 
 .container .article .new-article .article-list>li{
@@ -168,11 +186,12 @@ html,body{
 /* article--links */
 .container .article .links .links-list>li{
     padding: 10px 0;
+    transition: all .3s;
 }
 
 .container .article .links .links-list>li a{
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     display: block;
     margin-bottom: 8px;
 }
@@ -187,6 +206,7 @@ html,body{
 .container .aside{
     display: block;
     width: 22%;
+    transition: all .3s;
 }
 
 .container .aside .aside-card{
@@ -238,6 +258,22 @@ html,body{
     outline: none;
     border-radius: 5px 5px 5px 5px;
     border: 2px solid #ccc;
+}
+
+/* 文章内容 */
+.container .post-content{
+    border-radius: 8px;
+    padding: 15px 10px;
+    backdrop-filter: blur(1px);
+    backdrop-filter: opacity(1%);
+    /* letter-spacing: 0.5em; */
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, .3);
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.container .post-content .blog-post{
+    min-height: 500px;
 }
 
 /* footer */
